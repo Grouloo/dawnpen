@@ -1,0 +1,7 @@
+.settings-wheel {
+  float: right;
+  height: 35px;
+  width: 35px;
+  background-image: url('./icons/settings-wheel.png');
+  background-size: cover;
+}

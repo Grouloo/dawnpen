@@ -1,0 +1,71 @@
+.centered-text {
+  text-align: center;
+}
+
+.centered-div {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.short-hr {
+  width: 690px;
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user-settings-btn {
+  position: absolute;
+  right: 10px;
+}
+
+.topic-btn {
+  min-width: 160px;
+  margin-bottom: 10px;
+}
+
+.form {
+  min-width: 310px;
+}
+
+.form-input {
+  width: calc(100% - 35px);
+  border: none;
+  outline: none;
+  box-shadow: none;
+  font-weight: bold;
+}
+
+.form-select {
+  width: 50%;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.form-textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.form-textarea:focus {
+  outline-width: 0;
+}
+
+.form-submit {
+  float: right;
+}
+
+.message-card {
+  width: 75%!important;
+  min-width: 310px!important;
+  margin-bottom: 20px;
+}
+
+.message-profil-picture {
+  width: 35px;
+  height: 35px;
+  border-radius: 35px
+}

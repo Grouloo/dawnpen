@@ -1,0 +1,172 @@
+{
+  "__": {
+    "title": "DAWNPEN"
+  },
+
+  "fr": {
+
+    "navbar": {
+      "home": "Accueil",
+      "explore": "Explorer",
+      "favs": "Favoris"
+    },
+
+    "user_settings": {
+      "title": "Paramètres utilisateur",
+      "change_username": "Changer de nom d'utilisateur",
+      "submit": "Valider"
+    },
+
+    "footer": {
+      "powered_by": "Propulsé par ",
+      "title": "Plan",
+      "resources": "Ressources",
+      "faq": "FAQ",
+      "rules": "Mentions légales",
+      "thanks": "Remerciements",
+      "contact": "Contact"
+    },
+
+    "explore": {
+      "title": "Explorer",
+      "descr": "Choisissez un sujet qui vous intéresse et rencontrez de nouvelles personnes !"
+    },
+
+    "form": {
+      "username": "Nom d'utilisateur",
+      "preview": "Prévisualisation | ",
+      "textarea_new_message": "Nouveau message",
+      "textarea_new_reply": "Nouvelle réponse",
+      "submit": "Envoyer"
+    },
+
+    "message": {
+      "label": "Voir les réponses",
+      "clap": "Applaudir"
+    },
+
+    "thanks": {
+      "title": "Remerciements",
+      "descr": "DAWNPEN est un outil open-source, se basant lui-même sur d'autres outils open-source. Cette page est un hommage à tous les développeurs qui ont contribués directement ou indirectement à DAWNPEN",
+      "dawnpen_devs": "... et bien sûr, un grand merci à tous les développeurs qui ont contribué à améliorer DAWNPEN !"
+    },
+
+    "contact": {
+      "title": "Contact",
+      "email": "Votre adresse e-mail",
+      "options": [
+        {"Suggestion": "Suggestion"},
+        {"Dysfonctionnement": "Dysfonctionnement"},
+        {"Offre commerciale": "Offre commerciale"}
+      ],
+      "textarea": "Votre message"
+    },
+
+    "backoffice": {
+      "title": "Back-office",
+      "login": "Connexion",
+      "index": "Général",
+      "messages": "Messages",
+      "topics": "Sujets",
+      "tickets": "Tickets",
+      "moderators": "Modérateurs",
+      "create": "+ Nouveau",
+      "edit": "Editer",
+      "delete": "Supprimer",
+      "name": "Nom",
+      "descr": "Description",
+      "email": "Adresse e-mail",
+      "password": "Mot de passe",
+      "role": "Rôle",
+      "moderator": "Modérateur",
+      "administrator": "Administrateur",
+      "theme": "Thème",
+      "submit": "Envoyer"
+    }
+
+  },
+
+
+  "en": {
+    "navbar": {
+      "home": "Home",
+      "explore": "Explore",
+      "favs": "Favorites"
+    },
+
+    "user_settings": {
+      "title": "User Settings",
+      "change_username": "Change username",
+      "submit": "Validate"
+    },
+
+    "footer": {
+      "powered_by": "Powered by ",
+      "title": "Plan",
+      "resources": "Resources",
+      "faq": "FAQ",
+      "rules": "Legal",
+      "thanks": "Thanks",
+      "contact": "Contact"
+    },
+
+    "explore": {
+      "title": "Explore",
+      "descr": "Choose a topic that interests you and meet new people!"
+    },
+
+    "form": {
+      "username": "username",
+      "preview": "Preview | ",
+      "textarea_new_message": "New message",
+      "textarea_new_reply": "New reply",
+      "submit": "Send"
+    },
+
+    "message": {
+      "label": "View Replies",
+      "clap": "clap"
+    },
+
+    "thanks": {
+      "title": "thanks",
+      "descr": "DAWNPEN is an open-source tool, building on other open-source tools. This page is a tribute to all the developers who have contributed directly or indirectly to DAWNPEN",
+      "dawnpen_devs": "...and of course, a big thank you to all the developers who have contributed to improve DAWNPEN!"
+    },
+
+    "contact": {
+      "title": "Contact",
+      "email": "Your email address",
+      "options": [
+        { "Suggestion": "Suggestion"},
+        { "Malfunction": "Malfunction"},
+        { "Commercial offer": "Commercial offer"}
+      ],
+      "textarea": "Your message"
+    },
+
+    "backoffice": {
+      "title": "Back-office",
+      "login": "Login",
+      "index": "General",
+      "messages": "Messages",
+      "topics": "Topics",
+      "tickets": "Tickets",
+      "moderators": "Moderators",
+      "create": "+ New",
+      "edit": "Edit",
+      "delete": "Delete",
+      "name": "Name",
+      "descr": "Description",
+      "email": "Email address",
+      "password": "Password",
+      "role": "Role",
+      "moderator": "Moderator",
+      "administrator": "Administrator",
+      "theme": "Theme",
+      "submit": "Submit"
+    }
+
+  }
+
+}
