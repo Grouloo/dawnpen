@@ -88,6 +88,21 @@ Creates a moderator (moderators only)
 
 Returns list of all moderators (moderators only)
 
+### GET `/api/logged-moderator`
+
+Returns a 200 HTTP status if the user is logged as a moderator
+
+### POST `/api/login-moderator`
+
+Log in as a moderator
+
+#### Body
+
+``` json
+email: [string],
+password: [string]
+```
+
 ## Database
 
 We use Elasticsearch indexes

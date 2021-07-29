@@ -1,6 +1,6 @@
 # DAWNPEN - Open-source Social Network
 
-Open-source rewrited https:/dawn-app.com
+Open-source rewrited version of https:/dawn-app.com
 
 ## Stack
 
@@ -10,7 +10,6 @@ Open-source rewrited https:/dawn-app.com
 * React-Bootstrap
 * Bootstrap
 * axios
-* Express
 * Elasticsearch
 
 ## Launch dev server
