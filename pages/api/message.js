@@ -1,4 +1,5 @@
 import elasticsearch from '@elastic/elasticsearch'
+import processMedia from '../../src/functions/processMedia'
 
 
 export default async function handler(req, res) {
@@ -27,6 +28,20 @@ export default async function handler(req, res) {
         post.last_update_date = new Date()
 
         post.nb_replies = 0
+
+        //Adding media link to the message
+        if(req.body.file){
+
+          post.media = await processMedia(req.body.file)
+
+        }else{
+
+          const find_url = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
+          var first_url = find_url.exec(post.content)
+
+          post.media = first_url || null
+
+        }
 
         const response = await db.index({
           index: 'dawnpen-posts',

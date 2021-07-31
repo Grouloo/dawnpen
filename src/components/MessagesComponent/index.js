@@ -79,6 +79,7 @@ export default class MessagesComponent extends React.Component {
               username={message._source.username}
               date={date}
               content={message._source.content}
+              media={message._source.media}
               label={label}
               url={url}
             />

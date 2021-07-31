@@ -3,6 +3,7 @@ import React from 'react'
 import Link from 'next/link'
 import { Card } from 'react-bootstrap'
 import Linkify from 'react-linkify'
+import WidgetComponent from '../WidgetComponent'
 
 /**
  * Displays the message
@@ -42,6 +43,8 @@ export default class MessageDecorator extends React.Component {
                 return <div key={key}>{i}</div>;
               })}
             </Linkify>
+
+            <WidgetComponent url={this.props.media} />
 
           </Card.Text>
 
