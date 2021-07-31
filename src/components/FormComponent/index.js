@@ -2,6 +2,8 @@
 import React from 'react'
 import { Row, Form, Card, Button } from 'react-bootstrap'
 
+import WidgetComponent from '../WidgetComponent'
+
 /**
  * Form generator
  * @property {Object} fields List of fields with their placeholder { [field]: [placeholder] ... }
@@ -150,6 +152,11 @@ export default class FormComponent extends React.Component {
                   this.props.fields && this.props.fields.textarea &&
                   <textarea name="form_textarea" onChange={this.handleInputChange} placeholder={this.props.fields.textarea || "..."} value={this.state.form_textarea} className="form-textarea">
                   </textarea>
+                }
+
+                {
+                  this.state.form_file &&
+                  <WidgetComponent url={this.state.form_file} />
                 }
 
               </Card.Text>
