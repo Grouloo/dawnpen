@@ -2,6 +2,8 @@
 import React from 'react'
 import { Row, Form, Card, Button } from 'react-bootstrap'
 
+import WidgetComponent from '../WidgetComponent'
+
 /**
  * Form generator
  * @property {Object} fields List of fields with their placeholder { [field]: [placeholder] ... }
@@ -34,8 +36,9 @@ export default class FormComponent extends React.Component {
 
     }
 
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this)
+    this.handleFileChange = this.handleFileChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
 
   }
 
@@ -51,6 +54,22 @@ export default class FormComponent extends React.Component {
 
   }
 
+  handleFileChange(){
+
+    var file = event.target.files[0]
+    var reader = new FileReader()
+    var that = this
+
+    reader.onload = async function(event) {
+
+      that.setState({form_file: event.target.result})
+
+    }
+
+    reader.readAsDataURL(file)
+
+  }
+
   handleSubmit(){
 
     event.preventDefault()
@@ -61,6 +80,7 @@ export default class FormComponent extends React.Component {
       password: this.state.form_password,
       select: this.state.form_select,
       textarea: this.state.form_textarea,
+      file: this.state.form_file,
       ...this.props.otherData
     }
 
@@ -134,9 +154,25 @@ export default class FormComponent extends React.Component {
                   </textarea>
                 }
 
+                {
+                  this.state.form_file &&
+                  <WidgetComponent url={this.state.form_file} />
+                }
+
               </Card.Text>
 
               <hr />
+
+
+              {
+                this.props.fields && this.props.fields.file &&
+                <>
+                  <label htmlFor="file-upload"className="btn btn-link">
+                      {this.props.fields.file}
+                  </label>
+                  <input type={"file"} id='file-upload' onChange={this.handleFileChange} style={{display: 'none', width: 0}} />
+                </>
+              }
 
               <Button variant="primary" onClick={this.handleSubmit} className="form-submit">
                 {this.props.fields && this.props.fields.submit || this.props.values && this.props.values.submit || "Submit"}

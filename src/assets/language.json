@@ -37,6 +37,7 @@
       "preview": "Prévisualisation | ",
       "textarea_new_message": "Nouveau message",
       "textarea_new_reply": "Nouvelle réponse",
+      "file": "Média",
       "submit": "Envoyer"
     },
 
@@ -120,6 +121,7 @@
       "preview": "Preview | ",
       "textarea_new_message": "New message",
       "textarea_new_reply": "New reply",
+      "file": "Media",
       "submit": "Send"
     },
 

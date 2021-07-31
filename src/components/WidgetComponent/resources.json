@@ -1,0 +1,111 @@
+{
+  "model": {
+    "base_url": {
+      "part_to_remove": "string",
+      "embed_url": "string",
+      "display_link": "bool",
+      "force_widescreen": "bool",
+      "isImage": "bool"
+    }
+  },
+
+  "data": [
+
+      {
+        "base_url": "https://dawn-app.com/api/img/",
+        "part_to_remove": "",
+        "embed_url": "",
+        "display_link": false,
+        "force_widescreen": false,
+        "isImage": true
+      },
+
+      {
+        "base_url": ".jpg",
+        "part_to_remove": "",
+        "embed_url": "",
+        "display_link": true,
+        "force_widescreen": false,
+        "isImage": true
+      },
+      {
+        "base_url": ".png",
+        "part_to_remove": "",
+        "embed_url": "",
+        "display_link": true,
+        "force_widescreen": false,
+        "isImage": true
+      },
+      {
+        "base_url": ".gif",
+        "part_to_remove": "",
+        "embed_url": "",
+        "display_link": true,
+        "force_widescreen": false,
+        "isImage": true
+      },
+      {
+        "base_url": "data:image",
+        "part_to_remove": "data:image",
+        "embed_url": "data:image",
+        "display_link": false,
+        "force_widescreen": false,
+        "isImage": true
+      },
+
+      {
+        "base_url": "https://www.youtube.com/watch?v=",
+        "part_to_remove": "https://www.youtube.com/watch?v=",
+        "embed_url": "https://www.youtube.com/embed/",
+        "display_link": true,
+        "force_widescreen": false
+      },
+      {
+        "base_url": "https://youtu.be/",
+        "part_to_remove": "https://youtu.be/",
+        "embed_url": "https://www.youtube.com/embed/",
+        "display_link": true,
+        "force_widescreen": false
+      },
+
+      {
+        "base_url": "https://streamable.com/",
+        "part_to_remove": "https://streamable.com/",
+        "embed_url": "https://streamable.com/e",
+        "display_link": true,
+        "force_widescreen": false
+      },
+
+      {
+        "base_url": "https://www.twitch.tv/",
+        "part_to_remove": "https://www.twitch.tv/",
+        "embed_url": "https://player.twitch.tv/?parent=dawn-app.com&channel=",
+        "display_link": true,
+        "force_widescreen": false
+      },
+
+      {
+        "base_url": "https://open.spotify.com/",
+        "part_to_remove": "https://open.spotify.com/",
+        "embed_url": "https://open.spotify.com/embed/",
+        "display_link": true,
+        "force_widescreen": false
+      },
+
+      {
+        "base_url": "https://soundcloud.com/",
+        "part_to_remove": "",
+        "embed_url": "https://w.soundcloud.com/player/?url=",
+        "display_link": true,
+        "force_widescreen": false
+      },
+
+      {
+        "base_url": "https://strawpoll.com/",
+        "part_to_remove": "https://strawpoll.com/",
+        "embed_url": "https://strawpoll.com/embed/",
+        "display_link": true,
+        "force_widescreen": true
+      }
+    ]
+}

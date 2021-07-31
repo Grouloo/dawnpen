@@ -23,6 +23,7 @@ const App = (props) => {
       text: props.language.form.username,
       label: props.language.form.preview, //+ topicRef.state.topic._source.name,
       textarea: props.language.form.textarea_new_message,
+      file: props.language.form.file,
       submit: props.language.form.submit
     }
 
