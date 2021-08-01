@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import dynamic from 'next/dynamic'
 
 import detectLanguage from '../src/functions/detectLanguage.js'
 
@@ -10,9 +9,6 @@ import meta from '../src/assets/meta.json'
 
 //CSS
 import '../public/style.css'
-//const css_style = dynamic(() => import(`../public/themes/raw/style.css`))
-//const css_icons = dynamic(() => import(`../public/themes/raw/icons.css`))
-
 
 //Language Pack Importation
 import JSONData from '../src/assets/language.json'
