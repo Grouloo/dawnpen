@@ -1,0 +1,12 @@
+.settings-wheel {
+  float: right;
+  height: 35px;
+  width: 35px;
+  background-image: url('./icons/settings-wheel.png');
+  background-size: cover;
+  transition-duration: 0.5s;
+}
+
+.navbar .nav-link:hover .settings-wheel {
+  transform: rotate(90deg);
+}

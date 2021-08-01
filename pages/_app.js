@@ -1,10 +1,17 @@
-//import '../styles/globals.css'
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
 
 import detectLanguage from '../src/functions/detectLanguage.js'
 
 import HeaderComponent from '../src/components/HeaderComponent'
 import FooterComponent from '../src/components/FooterComponent'
+
+import meta from '../src/assets/meta.json'
+
+//CSS
+import '../public/style.css'
+//const css_style = dynamic(() => import(`../public/themes/raw/style.css`))
+//const css_icons = dynamic(() => import(`../public/themes/raw/icons.css`))
 
 
 //Language Pack Importation
@@ -18,10 +25,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
     <Head>
-      <link href="/style.css" rel="stylesheet"/>
-      <link href="/themes/raw/style.css" rel="stylesheet"/>
-      <link href="/themes/raw/icons.css" rel="stylesheet"/>
-
+      <link href={`themes/${meta.theme}/style.css`} rel="stylesheet" />
+      <link href={`themes/${meta.theme}/icons.css`} rel="stylesheet" />
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossOrigin="anonymous" />
     </Head>
 
