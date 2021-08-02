@@ -22,6 +22,16 @@ export default async function handler(req, res) {
         }
       })
 
+      await db.deleteByQuery({
+        index: 'dawnpen-moderators-access-tokens',
+        type: 'dawnpen-moderators-access-tokens',
+        body: {
+          query: {
+            match: {moderatorID: req.query._id}
+          }
+        }
+      })
+
       res.status(200).json()
       return
 

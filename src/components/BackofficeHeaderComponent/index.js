@@ -50,6 +50,7 @@ export default class BackofficeHeaderComponent extends React.Component {
 
           <Modal.Body>
 
+          {this.props.language.backoffice &&
             <FormComponent
               fields={ {
                 email: this.props.language.backoffice.email,
@@ -58,6 +59,7 @@ export default class BackofficeHeaderComponent extends React.Component {
               action={loginModerator}
               width="100%"
             />
+          }
 
           </Modal.Body>
         </Modal>
