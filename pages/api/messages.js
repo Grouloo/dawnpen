@@ -14,9 +14,12 @@ export default async function handler(req, res) {
       index: 'dawnpen-posts',
       type: 'dawnpen-posts',
       body: {
+        //from: req.from || 0,
+        size: 100,
         query: {
           match_all: {}
-        }
+        },
+        //sort : [{ creation_date : {order: "asc"}}],
       }
     })).body.hits.hits
 

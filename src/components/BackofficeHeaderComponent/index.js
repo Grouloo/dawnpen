@@ -78,6 +78,12 @@ export default class BackofficeHeaderComponent extends React.Component {
             </Nav.Item>
 
             <Nav.Item>
+              <Nav.Link href="/backoffice/statistics">
+                {this.props.language.backoffice && this.props.language.backoffice.statistics}
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
               <Nav.Link href="/backoffice/tables/messages">
                 {this.props.language.backoffice && this.props.language.backoffice.messages}
               </Nav.Link>
