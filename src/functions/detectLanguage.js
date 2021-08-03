@@ -21,7 +21,7 @@ exports.detectLanguage = function(JSONData){
 
   if(process.browser){
 
-    const storedSetting = localStorage.getItem('dawn_lang')
+    const storedSetting = localStorage.getItem('dawnpen_language')
 
     if(!storedSetting){
       if (typeof navigator === `undefined`) {
