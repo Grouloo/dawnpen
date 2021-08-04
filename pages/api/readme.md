@@ -147,3 +147,9 @@ We use Elasticsearch indexes
 "creation_date": [date],
 ```
 
+### dawnpen-moderators-access-tokens
+
+``` json
+"moderatorID": [string],
+"creation_date": [string]
+```
