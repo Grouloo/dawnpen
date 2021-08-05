@@ -12,7 +12,7 @@ export default async function postMessage(data){
 
     }else{
 
-      window.location.href = `/message/${data.topic}/${response.data.id}`
+      window.location.href = `/message/${response.data.topic}/${response.data.id}`
 
     }
 

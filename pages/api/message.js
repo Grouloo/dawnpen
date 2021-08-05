@@ -20,8 +20,31 @@ export default async function handler(req, res) {
       if(0 < post.content.length && post.content.length < 5000){
 
         //The post shouldn't have the properties [topic] and [parent] at the same time
-        if(!req.body.parent) post.topic = req.body.topic
-        else post.parent = req.body.parent
+        if(!req.body.parent){
+
+          post.topic = req.body.select || req.body.topic
+
+          //We need to check if the topic exists
+          const doesTopicExists = (await db.search({
+            index: 'dawnpen-topics',
+            type: 'dawnpen-topics',
+            body: {
+              query: {
+                bool: {
+                  must: {
+                    term: { id: post.topic }
+                  }
+                }
+              }
+            }
+          })).body.hits.hits
+
+          if(!doesTopicExists[0] || post.topic == undefined){
+            res.status('400').json({message: 'Bad request'})
+            return
+          }
+
+        }else post.parent = req.body.parent
 
         //Date
         post.creation_date = new Date()
@@ -70,7 +93,7 @@ export default async function handler(req, res) {
 
         }
 
-        res.status(200).json({ id: response.body._id })
+        res.status(200).json({ id: response.body._id, topic: post.topic })
         return
 
       }

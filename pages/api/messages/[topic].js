@@ -12,17 +12,17 @@ export default async function handler(req, res) {
       media: req.body.media
     }
 
+    const query = req.query.topic === "undefined"
+      ? { match_all : {} }
+      : { match: { topic: req.query.topic } }
+
     const response = (await db.search({
       index: 'dawnpen-posts',
       type: 'dawnpen-posts',
       body: {
         from: req.query.from || 0,
         size: 10,
-        query: {
-          match: {
-            topic: req.query.topic
-          }
-        },
+        query: query,
         sort : [{ last_update_date : {order: "desc"}}]
       }
     })).body.hits.hits

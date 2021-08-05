@@ -70,7 +70,7 @@ export default class MessagesComponent extends React.Component {
 
           const url = this.props._id
             ? ""
-            : `/message/${this.props.topic}/${message._id}`
+            : `/message/${message._source.topic}/${message._id}`
 
           return(
             <MessageDecorator
