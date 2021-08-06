@@ -128,6 +128,13 @@ We use Elasticsearch indexes
 "last_update_date": [date]
 ```
 
+### dawnpen-img
+
+``` json
+"base64": [base64],
+"extension": [string]
+```
+
 ### dawnpen-tickets
 
 ``` json
@@ -135,6 +142,27 @@ We use Elasticsearch indexes
 "type": [string],
 "content": [string],
 "creation_date": [date],
+```
+
+### dawnpen-signed-users
+
+``` json
+"username": [string],
+"email": [string],
+"password": [string],
+"auth_type": [string],
+"picture": [string],
+"bio": [string],
+"suspended": [bool],
+"creation_date": [date],
+```
+
+### dawnpen-signed-users-access-tokens
+
+``` json
+"userID": [string],
+"device": [string],
+"creation_date": [date]
 ```
 
 ### dawnpen-moderators

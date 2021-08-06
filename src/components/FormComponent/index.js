@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
-import { Row, Form, Card, Button } from 'react-bootstrap'
+import { Row, Form, Card, Button, Alert } from 'react-bootstrap'
 
 import WidgetComponent from '../WidgetComponent'
 
@@ -70,7 +70,7 @@ export default class FormComponent extends React.Component {
 
   }
 
-  handleSubmit(){
+  async handleSubmit(){
 
     event.preventDefault()
 
@@ -78,13 +78,14 @@ export default class FormComponent extends React.Component {
       text: this.state.form_text,
       email: this.state.form_email,
       password: this.state.form_password,
+      confirm_password: this.state.form_confirm_password,
       select: this.state.form_select,
       textarea: this.state.form_textarea,
       file: this.state.form_file,
       ...this.props.otherData
     }
 
-    this.props.action(data)
+    this.setState({response: await this.props.action(data)})
 
   }
 
@@ -93,6 +94,16 @@ export default class FormComponent extends React.Component {
     return(
 
       <Row>
+
+        {this.state.response &&
+
+          <Alert variant="danger">
+            {this.props.language.errors && this.props.language.errors[this.state.response]}
+          </Alert>
+
+        }
+
+
         <Form onSubmit={this.handleSubmit} className="centered-div">
 
           <Card ref={this.ref} border={this.state.border} className="form centered-div" style={{width: this.props.width || "50%"}}>
@@ -115,6 +126,11 @@ export default class FormComponent extends React.Component {
                 {
                   this.props.fields && this.props.fields.password &&
                   <input type="password" name="form_password" onChange={this.handleInputChange} placeholder={this.props.fields.password || "Password"} value={this.state.form_password} maxLength="50" className="form-input" />
+                }
+
+                {
+                  this.props.fields && this.props.fields.confirm_password &&
+                  <input type="password" name="form_confirm_password" onChange={this.handleInputChange} placeholder={this.props.fields.confirm_password || "Confirm Password"} value={this.state.form_confirm_password} maxLength="50" className="form-input" />
                 }
 
               </Card.Title>

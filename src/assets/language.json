@@ -63,6 +63,17 @@
       "textarea": "Votre message"
     },
 
+    "login": {
+      "title": "Connexion",
+      "signin": "S'inscrire",
+      "login": "Se connecter",
+      "username": "Nom d'utilisateur",
+      "email": "Adresse e-mail",
+      "password": "Mot de passe",
+      "confirm_password": "Confirmez le mot de passe",
+      "submit": "Confirmer"
+    },
+
     "backoffice": {
       "title": "Back-office",
       "login": "Connexion",
@@ -84,6 +95,11 @@
       "administrator": "Administrateur",
       "theme": "Thème",
       "submit": "Envoyer"
+    },
+
+    "errors": {
+      "passswords_must_match": "Les mots de passe ne correspondent pas.",
+      "complete_all_fields": "Tous les champs doivent être complétés."
     }
 
   },
