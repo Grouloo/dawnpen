@@ -61,7 +61,7 @@ export default async function handler(req, res) {
 
         const access_token = await db.index({
           index: 'dawnpen-signed-users-access-tokens',
-          type: 'dawnpen-signed-users',
+          type: 'dawnpen-signed-users-access-tokens',
           body: {
             userID: response.body._id,
             device: `${user_agent.name}, ${user_agent.os}`,

@@ -1,7 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
-import { Nav, Modal, Spinner } from 'react-bootstrap'
+import { Nav, Modal, Spinner, Button } from 'react-bootstrap'
+import axios from 'axios'
+import Cookies from 'universal-cookie';
 
 import FormComponent from '../FormComponent'
 
@@ -15,17 +17,42 @@ export default class UserSettingsComponent extends React.Component {
     super(props)
 
     this.state = {}
+
+    this.logout = this.logout.bind(this)
   }
 
-  componentDidMount(){
+  async componentDidMount(){
 
-    if(process.browser){
+    const response = await axios.get('/api/')
+
+    if(response.status == '200'){
+
+      this.setState({
+        done: true,
+        username:response.data._source.username,
+        picture: response.data._source.picture,
+        logged: true
+      })
+
+    }else if(process.browser){
+
       this.setState({
         done: true,
         username: localStorage.getItem('dawnpen-username'),
         picture: 'https://dawn-app.com/api/profil_picture/default.png'
       })
+
     }
+
+  }
+
+  async logout(){
+
+    const cookies = new Cookies();
+
+    cookies.remove('dawnpen-signed-user-access-token', { path: '/api' });
+
+    document.location.reload(false)
 
   }
 
@@ -44,7 +71,7 @@ export default class UserSettingsComponent extends React.Component {
           <Modal.Body>
             {/*<ChangeLocalUsernameComponent language={this.props.language} />*/}
 
-            {this.props.language && this.props.language.user_settings &&
+            {!this.state.logged && this.props.language && this.props.language.user_settings &&
               <FormComponent
                 fields={ {
                   text: this.props.language.user_settings.change_username,
@@ -58,6 +85,16 @@ export default class UserSettingsComponent extends React.Component {
               />
             }
           </Modal.Body>
+
+          <Modal.Footer>
+
+          <Button
+            variant="danger"
+            onClick={this.logout}>
+            {this.props.language.user_settings && this.props.language.user_settings.logout}
+          </Button>
+
+          </Modal.Footer>
 
         </Modal>
 

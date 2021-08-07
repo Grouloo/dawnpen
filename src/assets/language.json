@@ -14,7 +14,8 @@
     "user_settings": {
       "title": "Paramètres utilisateur",
       "change_username": "Changer de nom d'utilisateur",
-      "submit": "Valider"
+      "submit": "Valider",
+      "logout": "Se déconnecter"
     },
 
     "footer": {
