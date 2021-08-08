@@ -48,9 +48,11 @@ export default class UserSettingsComponent extends React.Component {
 
   async logout(){
 
-    const cookies = new Cookies();
+    //const cookies = new Cookies();
 
-    cookies.remove('dawnpen-signed-user-access-token', { path: '/api' });
+    //cookies.remove('dawnpen-signed-user-access-token', { path: '/api' });
+
+    await axios.get('/logout')
 
     document.location.reload(false)
 

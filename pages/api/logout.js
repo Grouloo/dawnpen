@@ -1,6 +1,6 @@
 import elasticsearch from '@elastic/elasticsearch'
 import Cookies from 'cookies'
-
+import { serialize } from 'cookie'
 
 import JSONData from '../../src/assets/meta.json'
 
@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   if(cookies.get('dawnpen-signed-user-access-token')){
 
     //Checking if the access_token is valid
-    const response = (await db.search({
+    const response = await db.deleteByQuery({
       index: 'dawnpen-signed-users-access-tokens',
       body: {
         query: {
@@ -22,30 +22,11 @@ export default async function handler(req, res) {
           }
         },
       }
-    })).body.hits.hits
+    })
 
-    console.log(response)
-
-    if(Array.isArray(response) && response.length == 1){
-
-      //Fetching the user data
-      const user = (await db.search({
-        index: 'dawnpen-signed-users',
-        type: 'dawnpen-signed-users',
-        body: {
-          query: {
-            match: {
-              _id: response[0]._source.userID
-            }
-          },
-        }
-      })).body.hits.hits
-
-      res.status(200).json(user[0])
-      return
-
-    }
-
+    res.setHeader('Set-Cookie', serialize('dawnpen-signed-user-access-token', ''))
+    res.status(200).json()
+    return
 
   }
 

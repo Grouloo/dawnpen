@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import FormComponent from '../src/components/FormComponent'
 
 import registerUser from '../src/functions/registerUser'
+import loginUser from '../src/functions/loginUser'
 
 export default class App extends React.Component {
 
@@ -19,10 +20,10 @@ export default class App extends React.Component {
 
         <Row>
 
-          <Col>
+          <Col className="centered-text" >
 
             <h1>{this.props.language.login && this.props.language.login.title}</h1>
-            <hr />
+            <hr className="short-hr" />
 
           </Col>
 
@@ -59,6 +60,8 @@ export default class App extends React.Component {
                 password: this.props.language.login && this.props.language.login.password,
                 submit: this.props.language.login && this.props.language.login.submit,
               }}
+              action={loginUser}
+              language={this.props.language}
               width="75%"
             />
 
