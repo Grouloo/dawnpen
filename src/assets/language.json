@@ -75,6 +75,11 @@
       "submit": "Confirmer"
     },
 
+    "user": {
+      "title": "Profil Utilisateur",
+      "more_informations": "Plus d'informations >"
+    },
+
     "backoffice": {
       "title": "Back-office",
       "login": "Connexion",

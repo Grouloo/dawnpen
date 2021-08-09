@@ -1,11 +1,13 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
+import Link from 'next/link'
 import { Nav, Modal, Spinner, Button } from 'react-bootstrap'
 import axios from 'axios'
 import Cookies from 'universal-cookie';
 
 import FormComponent from '../FormComponent'
+import UserProfilComponent from '../UserProfilComponent';
 
 import ChangeLocalUsernameComponent from './ChangeLocalUsernameComponent'
 
@@ -29,7 +31,8 @@ export default class UserSettingsComponent extends React.Component {
 
       this.setState({
         done: true,
-        username:response.data._source.username,
+        userID: response.data._id,
+        username: response.data._source.username,
         picture: response.data._source.picture,
         logged: true
       })
@@ -86,6 +89,19 @@ export default class UserSettingsComponent extends React.Component {
                 width="100%"
               />
             }
+
+            {this.state.logged &&
+              <>
+
+                <UserProfilComponent userID={this.state.userID} />
+
+                <Link href={`/user/${this.state.userID}`} as={`/user/${this.state.userID}`} passHref>
+                  {this.props.language.user && this.props.language.user.more_informations}
+                </Link>
+
+              </>
+            }
+
           </Modal.Body>
 
           <Modal.Footer>

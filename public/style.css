@@ -69,3 +69,9 @@
   height: 35px;
   border-radius: 35px
 }
+
+.user-profil-picture {
+  width: 128px;
+  height: 128px;
+  border-radius: 128px;
+}
