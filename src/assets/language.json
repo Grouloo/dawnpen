@@ -77,7 +77,8 @@
 
     "user": {
       "title": "Profil Utilisateur",
-      "more_informations": "Plus d'informations >"
+      "more_informations": "Plus d'informations >",
+      "submit": "Confirmer"
     },
 
     "backoffice": {

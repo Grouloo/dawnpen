@@ -2,7 +2,11 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import { Row, Col, Card } from 'react-bootstrap'
+
+import FormComponent from '../FormComponent'
+
 import getUser from '../../functions/getUser'
+import editBio from '../../functions/editBio'
 
 export default class UserProfilComponent extends React.Component {
 
@@ -24,14 +28,14 @@ export default class UserProfilComponent extends React.Component {
 
       <Card>
 
-        {this.state.user &&
+        {this.state.user && !this.props.logged &&
 
             <Card.Body>
 
               <Row noGutters>
 
                 <Col style={{maxWidth: '128px'}}>
-                  <img src={this.state.user._source.picture} className="user-profil-picture" />
+                  <img src={`/api/profil-picture/${this.state.user._id}`} className="user-profil-picture" />
                 </Col>
 
                 <Col>
@@ -47,6 +51,38 @@ export default class UserProfilComponent extends React.Component {
               </Row>
 
             </Card.Body>
+
+
+        }
+
+        {this.state.user && this.props.logged &&
+
+          <Card.Body>
+
+            <Row noGutters>
+
+              <Col style={{maxWidth: '128px'}}>
+                <img src={`/api/profil-picture/${this.state.user._id}`} className="user-profil-picture" />
+              </Col>
+
+              <Col>
+                <h3>{this.state.user._source.username}</h3>
+
+                <FormComponent
+                  fields={{
+                    textarea: '...',
+                    submit: this.props.language.user && this.props.language.user.submit
+                  }}
+                  values={{
+                    textarea: this.state.user._source.bio
+                  }}
+                  action={editBio}
+                />
+              </Col>
+
+            </Row>
+
+          </Card.Body>
 
 
         }

@@ -59,6 +59,44 @@ Posts a ticket
 "content": [string]
 ```
 
+### GET `/api/user/[userID]`
+
+### GET `/api/profil-picture/[userID]`
+
+### POST `/api/register`
+
+#### Body
+
+``` json
+"text": [string],
+"email": [string],
+"password": [string],
+"confirm_password": [string]
+```
+
+### POST `/api/login`
+
+#### Body
+
+``` json
+"email": [string],
+"password": [string]
+```
+
+### POST `/api/edit-bio`
+
+#### Body
+
+``` json
+"textarea": [string]
+```
+
+### POST `/api/edit-picture`
+
+```json
+"media": [string]
+```
+
 ### DELETE `/api/ticket/[id]`
 
 Deletes a ticket

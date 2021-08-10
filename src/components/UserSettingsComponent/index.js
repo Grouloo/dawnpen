@@ -93,7 +93,11 @@ export default class UserSettingsComponent extends React.Component {
             {this.state.logged &&
               <>
 
-                <UserProfilComponent userID={this.state.userID} />
+                <UserProfilComponent
+                  userID={this.state.userID}
+                  logged={this.state.logged}
+                  language={this.props.language}
+                />
 
                 <Link href={`/user/${this.state.userID}`} as={`/user/${this.state.userID}`} passHref>
                   {this.props.language.user && this.props.language.user.more_informations}
@@ -119,7 +123,7 @@ export default class UserSettingsComponent extends React.Component {
         <Nav className="user-settings-btn">
 
           <Nav.Link style={{color: "#ecf0f1"}} onClick={() => this.setState({ show: true })}>
-            {this.state.picture && <a><img src={this.state.picture} className="message-profil-picture" /></a>}
+            {this.state.userID && <a><img src={`/api/profil-picture/${this.state.userID}`} className="message-profil-picture" /></a>}
             {this.state.username}
             {!this.state.done && <Spinner animation="border" />}
             <a>        </a>
